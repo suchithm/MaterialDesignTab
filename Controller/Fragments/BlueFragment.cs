@@ -1,20 +1,10 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Util;
+﻿using Android.OS;
+using Android.Support.V4.App;
 using Android.Views;
-using Android.Widget;
 
 namespace TabbedApp
 {
-	public class BlueFragment : Android.Support.V4.App.Fragment
+	public class BlueFragment : Fragment
 	{
 		public override void OnCreate (Bundle savedInstanceState)
 		{

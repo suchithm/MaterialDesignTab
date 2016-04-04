@@ -3,100 +3,93 @@ using Android.Widget;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Content;
+using Android.Support.V7.Widget;
+using Android.Runtime;
+using Android.Support.V4.View; 
+using Android.Support.Design.Widget;
+using Android.Support.V4.App;
 
 namespace TabbedApp
 {
 	[Activity (Label = "TabbedApp", MainLauncher = true, Icon = "@mipmap/icon")]
-	public class MainActivity : AppCompatActivity, Android.Support.V7.App.ActionBar.ITabListener, IDialogInterfaceOnClickListener
- { 
-		//suchith
+	public class MainActivity : FragmentActivity
+	{ 
+		TabLayout tabLayout;
 		protected override void OnCreate (Bundle savedInstanceState)
 		{
-			base.OnCreate (savedInstanceState);
-			InitActionBar ();
+			base.OnCreate (savedInstanceState); 
+			SetContentView (Resource.Layout.Main);
+//			var ft = SupportFragmentManager.BeginTransaction ();
+//			ft.AddToBackStack (null);
+//			ft.Add (Resource.Id.HomeFrameLayout,new BlueFragment ());
+//			ft.Commit ();
+
+			// Init toolbar
+			var toolbar = FindViewById<Toolbar>(Resource.Id.app_bar); 
+			tabLayout=FindViewById<TabLayout>(Resource.Id.sliding_tabs);
+//			SetSupportActionBar(toolbar);
+//			SupportActionBar.SetTitle (Resource.String.app_name);
+//			SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+//			SupportActionBar.SetDisplayShowHomeEnabled(true);
+
+			FnInitTabLayout ();
+			FnClickEvents ();
 		}
-		private void InitActionBar()
+		void FnInitTabLayout()
 		{
-			if (SupportActionBar == null)
-				return;
+			//Fragment array
+			var fragments = new Android.Support.V4.App.Fragment[]
+			{ 
+				new BlueFragment(),
+				new GreenFragment(),
+				new YellowFragment(), 
+			}; 
+			//Tab title array
+			var titles = CharSequence.ArrayFromStringArray (new[] { 
+				"Blue",
+				"Green",
+				"Yellow", 
+			});
 
-			var actionBar = SupportActionBar;
-			actionBar.NavigationMode = (int)ActionBarNavigationMode.Tabs;
+			var viewPager = FindViewById<ViewPager>(Resource.Id.viewpager);
+			//viewpager holding fragment array and tab title text
+			viewPager.Adapter = new TabsFragmentPagerAdapter(SupportFragmentManager, fragments, titles);
 
-			var tab1 = actionBar.NewTab();
-			tab1.SetTabListener(this);
-			tab1.SetText("Red");
-			actionBar.AddTab(tab1);
-
-			var tab2 = actionBar.NewTab();
-			tab2.SetTabListener(this);
-			tab2.SetText("Blue");
-			actionBar.AddTab(tab2);
-
-			var tab3 = actionBar.NewTab();
-			tab3.SetTabListener(this);
-			tab3.SetText("Yellow");
-			actionBar.AddTab(tab3);
-
-			if ((int)Build.VERSION.SdkInt >= 21)
-			{
-				var tab4 = actionBar.NewTab();
-				tab4.SetTabListener(this);
-				tab4.SetText("Green");
-				actionBar.AddTab(tab4);
-			}
-
+			// Give the TabLayout the ViewPager 
+			tabLayout.SetupWithViewPager(viewPager); 
+			//tabLayout.SetTabTextColors(
 		}
-	
-		public void OnTabReselected( Android.Support.V7.App.ActionBar.Tab tab, Android.Support.V4.App.FragmentTransaction ft)
+		void FnClickEvents()
 		{
+			//set tab text color
+			tabLayout.SetTabTextColors(-1,-70);
+
+//			tabLayout.TabSelected += (object sender, TabLayout.TabSelectedEventArgs e) => {   
+//				switch (e.Tab.Text) {
+//				//
+//				case "Blue" :  
+//					var ft = SupportFragmentManager.BeginTransaction ();
+//					ft.AddToBackStack (null);
+//					ft.Add (Resource.Id.HomeFrameLayout,new GreenFragment (),"blue_frag_tag");
+//					//ft.Add (Resource.Id.HomeFrameLayout,new BlueFragment ());
+//					ft.Commit ();    
+//					break;
+//				case "Green":
+//					var ftGreen = SupportFragmentManager.BeginTransaction ();
+//					ftGreen.AddToBackStack (null); 
+//					ftGreen.Add (Resource.Id.HomeFrameLayout,new GreenFragment (),"green_frag_tag");
+//					ftGreen.Commit ();  
+//					break; 
+//
+//				case "Yellow":
+//					var ftYellow = SupportFragmentManager.BeginTransaction ();
+//					ftYellow.AddToBackStack (null);
+//					ftYellow.Add (Resource.Id.HomeFrameLayout,new YellowFragment (),"yellow_frag_tag");
+//					ftYellow.Commit ();    
+//					break; 				 
+//				}
+//			};
 		}
-
-		public void OnTabSelected(Android.Support.V7.App.ActionBar.Tab tab, Android.Support.V4.App.FragmentTransaction ft)
-		{
-			switch (tab.Text)
-			{
-			case "Red":
-				ft.Replace(Android.Resource.Id.Content, new RedFragment());
-				break;
-			case "Blue":
-				ft.Replace(Android.Resource.Id.Content, new BlueFragment());
-				break;
-			case "Yellow":
-				ft.Replace(Android.Resource.Id.Content, new YellowFragment());
-				break;
-			case "Green":
-				ft.Replace(Android.Resource.Id.Content, new GreenFragment());
-				break;
-			}
-		}
-
-		public void OnTabUnselected(Android.Support.V7.App.ActionBar.Tab tab, Android.Support.V4.App.FragmentTransaction ft)
-		{
-
-		}
-
-//		public override bool OnCreateOptionsMenu(Android.Views.IMenu menu)
-//		{
-//			MenuInflater.Inflate(Resource.Menu.main, menu);
-//			return base.OnCreateOptionsMenu(menu);
-//		}
-
-//		public override bool OnOptionsItemSelected( IMenuItem item)
-//		{
-//			if(item.ItemId == Resource.Id.about)
-//			{
-//				var text = (TextView)LayoutInflater.Inflate(Resource.Layout.about_view, null);
-//				text.TextFormatted = (Html.FromHtml(GetString(Resource.String.about_body)));
-//				new Android.Support.V7.App.AlertDialog.Builder(this)
-//					.SetTitle(Resource.String.about)
-//					.SetView(text)
-//					.SetInverseBackgroundForced(true)
-//					.SetPositiveButton(Android.Resource.String.Ok, this).Create().Show();
-//			}
-//			return base.OnOptionsItemSelected(item);
-//		}
-
 		public void OnClick(IDialogInterface dialog, int which)
 		{
 			dialog.Dismiss();
