@@ -1772,10 +1772,7 @@ namespace TabbedApp
 		{
 			
 			// aapt resource value: 0x7f070074
-			public const int HomeFrameLayout = 2131165300;
-			
-			// aapt resource value: 0x7f070075
-			public const int action0 = 2131165301;
+			public const int action0 = 2131165300;
 			
 			// aapt resource value: 0x7f07005a
 			public const int action_bar = 2131165274;
@@ -1801,8 +1798,8 @@ namespace TabbedApp
 			// aapt resource value: 0x7f07005b
 			public const int action_context_bar = 2131165275;
 			
-			// aapt resource value: 0x7f070079
-			public const int action_divider = 2131165305;
+			// aapt resource value: 0x7f070078
+			public const int action_divider = 2131165304;
 			
 			// aapt resource value: 0x7f070003
 			public const int action_menu_divider = 2131165187;
@@ -1840,8 +1837,8 @@ namespace TabbedApp
 			// aapt resource value: 0x7f070044
 			public const int buttonPanel = 2131165252;
 			
-			// aapt resource value: 0x7f070076
-			public const int cancel_action = 2131165302;
+			// aapt resource value: 0x7f070075
+			public const int cancel_action = 2131165301;
 			
 			// aapt resource value: 0x7f07002b
 			public const int center = 2131165227;
@@ -1855,8 +1852,8 @@ namespace TabbedApp
 			// aapt resource value: 0x7f070052
 			public const int checkbox = 2131165266;
 			
-			// aapt resource value: 0x7f07007c
-			public const int chronometer = 2131165308;
+			// aapt resource value: 0x7f07007b
+			public const int chronometer = 2131165307;
 			
 			// aapt resource value: 0x7f070033
 			public const int clip_horizontal = 2131165235;
@@ -1903,8 +1900,8 @@ namespace TabbedApp
 			// aapt resource value: 0x7f07001b
 			public const int end = 2131165211;
 			
-			// aapt resource value: 0x7f070081
-			public const int end_padder = 2131165313;
+			// aapt resource value: 0x7f070080
+			public const int end_padder = 2131165312;
 			
 			// aapt resource value: 0x7f070023
 			public const int enterAlways = 2131165219;
@@ -1948,8 +1945,8 @@ namespace TabbedApp
 			// aapt resource value: 0x7f07003f
 			public const int image = 2131165247;
 			
-			// aapt resource value: 0x7f070080
-			public const int info = 2131165312;
+			// aapt resource value: 0x7f07007f
+			public const int info = 2131165311;
 			
 			// aapt resource value: 0x7f070000
 			public const int item_touch_helper_previous_elevation = 2131165184;
@@ -1960,11 +1957,11 @@ namespace TabbedApp
 			// aapt resource value: 0x7f07002f
 			public const int left = 2131165231;
 			
-			// aapt resource value: 0x7f07007a
-			public const int line1 = 2131165306;
+			// aapt resource value: 0x7f070079
+			public const int line1 = 2131165305;
 			
-			// aapt resource value: 0x7f07007e
-			public const int line3 = 2131165310;
+			// aapt resource value: 0x7f07007d
+			public const int line3 = 2131165309;
 			
 			// aapt resource value: 0x7f07000b
 			public const int listMode = 2131165195;
@@ -1972,8 +1969,8 @@ namespace TabbedApp
 			// aapt resource value: 0x7f070041
 			public const int list_item = 2131165249;
 			
-			// aapt resource value: 0x7f070078
-			public const int media_actions = 2131165304;
+			// aapt resource value: 0x7f070077
+			public const int media_actions = 2131165303;
 			
 			// aapt resource value: 0x7f07001c
 			public const int middle = 2131165212;
@@ -2110,8 +2107,8 @@ namespace TabbedApp
 			// aapt resource value: 0x7f070031
 			public const int start = 2131165233;
 			
-			// aapt resource value: 0x7f070077
-			public const int status_bar_latest_event_content = 2131165303;
+			// aapt resource value: 0x7f070076
+			public const int status_bar_latest_event_content = 2131165302;
 			
 			// aapt resource value: 0x7f070065
 			public const int submit_area = 2131165285;
@@ -2119,17 +2116,17 @@ namespace TabbedApp
 			// aapt resource value: 0x7f07000d
 			public const int tabMode = 2131165197;
 			
-			// aapt resource value: 0x7f07007f
-			public const int text = 2131165311;
+			// aapt resource value: 0x7f07007e
+			public const int text = 2131165310;
 			
-			// aapt resource value: 0x7f07007d
-			public const int text2 = 2131165309;
+			// aapt resource value: 0x7f07007c
+			public const int text2 = 2131165308;
 			
 			// aapt resource value: 0x7f07004d
 			public const int textSpacerNoButtons = 2131165261;
 			
-			// aapt resource value: 0x7f07007b
-			public const int time = 2131165307;
+			// aapt resource value: 0x7f07007a
+			public const int time = 2131165306;
 			
 			// aapt resource value: 0x7f070043
 			public const int title = 2131165251;

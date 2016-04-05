@@ -18,22 +18,10 @@ namespace TabbedApp
 		protected override void OnCreate (Bundle savedInstanceState)
 		{
 			base.OnCreate (savedInstanceState); 
-			SetContentView (Resource.Layout.Main);
-//			var ft = SupportFragmentManager.BeginTransaction ();
-//			ft.AddToBackStack (null);
-//			ft.Add (Resource.Id.HomeFrameLayout,new BlueFragment ());
-//			ft.Commit ();
-
-			// Init toolbar
-			var toolbar = FindViewById<Toolbar>(Resource.Id.app_bar); 
-			tabLayout=FindViewById<TabLayout>(Resource.Id.sliding_tabs);
-//			SetSupportActionBar(toolbar);
-//			SupportActionBar.SetTitle (Resource.String.app_name);
-//			SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-//			SupportActionBar.SetDisplayShowHomeEnabled(true);
-
-			FnInitTabLayout ();
-			FnClickEvents ();
+			SetContentView (Resource.Layout.Main); 
+ 
+			tabLayout=FindViewById<TabLayout>(Resource.Id.sliding_tabs); 
+			FnInitTabLayout (); 
 		}
 		void FnInitTabLayout()
 		{
@@ -58,38 +46,7 @@ namespace TabbedApp
 			// Give the TabLayout the ViewPager 
 			tabLayout.SetupWithViewPager(viewPager); 
 			//tabLayout.SetTabTextColors(
-		}
-		void FnClickEvents()
-		{
-			//set tab text color
-			tabLayout.SetTabTextColors(-1,-70);
-
-//			tabLayout.TabSelected += (object sender, TabLayout.TabSelectedEventArgs e) => {   
-//				switch (e.Tab.Text) {
-//				//
-//				case "Blue" :  
-//					var ft = SupportFragmentManager.BeginTransaction ();
-//					ft.AddToBackStack (null);
-//					ft.Add (Resource.Id.HomeFrameLayout,new GreenFragment (),"blue_frag_tag");
-//					//ft.Add (Resource.Id.HomeFrameLayout,new BlueFragment ());
-//					ft.Commit ();    
-//					break;
-//				case "Green":
-//					var ftGreen = SupportFragmentManager.BeginTransaction ();
-//					ftGreen.AddToBackStack (null); 
-//					ftGreen.Add (Resource.Id.HomeFrameLayout,new GreenFragment (),"green_frag_tag");
-//					ftGreen.Commit ();  
-//					break; 
-//
-//				case "Yellow":
-//					var ftYellow = SupportFragmentManager.BeginTransaction ();
-//					ftYellow.AddToBackStack (null);
-//					ftYellow.Add (Resource.Id.HomeFrameLayout,new YellowFragment (),"yellow_frag_tag");
-//					ftYellow.Commit ();    
-//					break; 				 
-//				}
-//			};
-		}
+		} 
 		public void OnClick(IDialogInterface dialog, int which)
 		{
 			dialog.Dismiss();
