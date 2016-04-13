@@ -11,7 +11,7 @@ using Android.Support.V4.App;
 
 namespace TabbedApp
 {
-	[Activity (Label = "TabbedApp", MainLauncher = true, Icon = "@mipmap/icon")]
+	[Activity (Label = "TabbedApp",Icon = "@mipmap/icon",MainLauncher=true)]
 	public class MainActivity : FragmentActivity
 	{ 
 		TabLayout tabLayout;
@@ -25,6 +25,7 @@ namespace TabbedApp
 		}
 		void FnInitTabLayout()
 		{
+			tabLayout.SetTabTextColors (Android.Graphics.Color.Aqua,Android.Graphics.Color.AntiqueWhite);
 			//Fragment array
 			var fragments = new Android.Support.V4.App.Fragment[]
 			{ 
@@ -45,13 +46,13 @@ namespace TabbedApp
 
 			// Give the TabLayout the ViewPager 
 			tabLayout.SetupWithViewPager(viewPager); 
-			//tabLayout.SetTabTextColors(
+			//tabLayout.SetTabTextColors( 
 		} 
+	
 		public void OnClick(IDialogInterface dialog, int which)
 		{
 			dialog.Dismiss();
 		}
+
 	} 
 }
-
-
