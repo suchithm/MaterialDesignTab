@@ -11,7 +11,7 @@ using Android.Support.V4.App;
 
 namespace TabbedApp
 {
-	[Activity (Label = "TabbedApp",Icon = "@mipmap/icon",MainLauncher=true)]
+	[Activity (Label = "TabbedApp",Icon = "@mipmap/icon")]
 	public class MainActivity : FragmentActivity
 	{ 
 		TabLayout tabLayout;
@@ -19,7 +19,6 @@ namespace TabbedApp
 		{
 			base.OnCreate (savedInstanceState); 
 			SetContentView (Resource.Layout.Main); 
- 
 			tabLayout=FindViewById<TabLayout>(Resource.Id.sliding_tabs); 
 			FnInitTabLayout (); 
 		}

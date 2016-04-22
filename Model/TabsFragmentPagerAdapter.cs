@@ -30,7 +30,7 @@ namespace TabbedApp
 
 		public override ICharSequence GetPageTitleFormatted(int position)
 		{
-			return titles[position];
+			return titles[position]; 
 		}
 	}
 }
