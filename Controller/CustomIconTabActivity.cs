@@ -1,9 +1,7 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -17,7 +15,7 @@ using Android.Support.V7.Widget;
 
 namespace TabbedApp
 {
-	[Activity (Label = "Icon Tab",MainLauncher=true)]			
+	[Activity (Label = "IconTab",MainLauncher=true)]			
 	public class IconTabActivity : AppCompatActivity
 	{
 		TabLayout tabLayout;
@@ -83,9 +81,7 @@ namespace TabbedApp
 			custTabThree.Text=GetString(Resource.String.strData);
 			custTabThree.SetCompoundDrawablesWithIntrinsicBounds( Resource.Drawable.ic_wifi,0, 0, 0);
 			tabLayout.GetTabAt(2).SetCustomView(custTabThree);
-		}
-
-
+		} 
 	}
 }
 

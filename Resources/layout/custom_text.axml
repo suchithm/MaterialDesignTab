@@ -7,6 +7,7 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="Sample"
-        android:textStyle="bold"
-        android:textColor="#ffffffff" />
+        android:textStyle="normal"
+        android:textColor="#ffffffff"
+        android:paddingLeft="8dp" />
 </RelativeLayout>
