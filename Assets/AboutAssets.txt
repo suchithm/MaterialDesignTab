@@ -22,7 +22,7 @@ Typeface tf = Typeface.CreateFromAsset (Context.Assets, "fonts/samplefont.ttf");
 [correction to blog : GCM link, design intro to previous]
 Material design tab in xamarin android 
 
-Introduction: Here i'm adding one more beautiful UI component to Android Material Design[link] introduction series i.e. Tab control using 
+Introduction: Here i'm adding one more UI component to Android Material Design[link] introduction series i.e. Tab control using 
 android material design library in xamarin android. 
 Pic:
 
