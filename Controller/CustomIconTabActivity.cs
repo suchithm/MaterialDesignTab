@@ -23,7 +23,7 @@ namespace TabbedApp
 		{
 			base.OnCreate (savedInstanceState);
 			SetContentView (Resource.Layout.CustomIconTabLayout); 
-			var toolbar = FindViewById<Toolbar> (Resource.Id.app_bar);
+			var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar> (Resource.Id.app_bar);
 			SetSupportActionBar (toolbar);
 			SupportActionBar.SetDisplayHomeAsUpEnabled (true);
 
@@ -53,8 +53,8 @@ namespace TabbedApp
 			// Give the TabLayout the ViewPager 
 			tabLayout.SetupWithViewPager(viewPager); 
 			//tabLayout.SetTabTextColors(
-			//FnSetIcons();
-			FnSetupTabIconsWithText ();
+			FnSetIcons();
+			//FnSetupTabIconsWithText ();
 		} 
 		void FnSetIcons()
 		{ 

@@ -39,37 +39,37 @@ Setup xamarin android project and Add "Xamarin Android Support Library - Design"
 Step 2: Make the necessary changes to Styles.xml. As Support design library works only with Theme.AppCompat, App theme should be
 inherited from Theme.AppCompat as follows.
 
- <?xml version="1.0" encoding="UTF-8" ? >
- <resources  >
- <style name="DesignTheme" parent="Theme.AppCompat.Light.DarkActionBar" >
-   <item name="windowNoTitle" >true </item >
-      <item name="windowActionBar" >false </item >
-         <item name="colorPrimary" >@color/primary </item >
-         <item name="colorPrimaryDark" >@color/primary_dark </item >
-         <item name="colorAccent" >@color/accent </item > </style >
- </resources >
+ &lt;?xml version="1.0" encoding="UTF-8" ? &gt;
+ &lt;resources  &gt;
+ &lt;style name="DesignTheme" parent="Theme.AppCompat.Light.DarkActionBar" &gt;
+   &lt;item name="windowNoTitle" &gt;true &lt;/item &gt;
+      &lt;item name="windowActionBar" &gt;false &lt;/item &gt;
+         &lt;item name="colorPrimary" &gt;@color/primary &lt;/item &gt;
+         &lt;item name="colorPrimaryDark" &gt;@color/primary_dark &lt;/item &gt;
+         &lt;item name="colorAccent" &gt;@color/accent &lt;/item &gt; &lt;/style &gt;
+ &lt;/resources &gt;
 
 Step 3: Accordingly Add style tag to manifest application tag theme property (android:theme="@style/DesignTheme")
 
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.codelog.tabbedapp">
-	<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="23" />
-	<application android:allowBackup="true" android:theme="@style/DesignTheme" android:icon="@mipmap/icon" android:label="@string/app_name"></application>
-</manifest>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.codelog.tabbedapp"&gt;
+	&lt;uses-sdk android:minSdkVersion="16" android:targetSdkVersion="23" /&gt;
+	&lt;application android:allowBackup="true" android:theme="@style/DesignTheme" android:icon="@mipmap/icon" android:label="@string/app_name"&gt;&lt;/application&gt;
+&lt;/manifest&gt;
 
 Step 4: Now under Resource, create a folder named values-v21. Inside this create another styles.xml with the below styles.
 These styles are specific to Android 5.0
 
-<?xml version="1.0" encoding="UTF-8" ?>
-<resources>
-	<style name="MyTheme" parent="MyTheme.Base">
-		<item name="android:windowContentTransitions">true</item>
-		<item name="android:windowAllowEnterTransitionOverlap">true</item>
-		<item name="android:windowAllowReturnTransitionOverlap">true</item>
-		<item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
-		<item name="android:windowSharedElementExitTransition">@android:transition/move</item>
-	</style>
-</resources>
+&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;resources&gt;
+	&lt;style name="MyTheme" parent="MyTheme.Base"&gt;
+		&lt;item name="android:windowContentTransitions"&gt;true&lt;/item&gt;
+		&lt;item name="android:windowAllowEnterTransitionOverlap"&gt;true&lt;/item&gt;
+		&lt;item name="android:windowAllowReturnTransitionOverlap"&gt;true&lt;/item&gt;
+		&lt;item name="android:windowSharedElementEnterTransition"&gt;@android:transition/move&lt;/item&gt;
+		&lt;item name="android:windowSharedElementExitTransition"&gt;@android:transition/move&lt;/item&gt;
+	&lt;/style&gt;
+&lt;/resources&gt;
 
 Step 5: Open the Layout file Main.axml and add below layout code.
 
@@ -109,8 +109,7 @@ Step 5: Open the Layout file Main.axml and add below layout code.
     </LinearLayout>
 </LinearLayout> 
 
-Step 6: Do the following changes to MainActivity.cs
-[change text]
+Step 6: Do the following changes to MainActivity.cs 
 TabsFragmentPagerAdapter – Custom adapter class provides fragments required for the view pager.
 SetupWithViewPager() – Assigns ViewPager to tablayout 
  

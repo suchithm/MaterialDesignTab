@@ -28,10 +28,10 @@ namespace TabbedApp
 			return fragments[position];
 		}
 
-		public override ICharSequence GetPageTitleFormatted(int position)
-		{
-			return titles[position]; 
-		}
+//		public override ICharSequence GetPageTitleFormatted(int position)
+//		{
+//			return titles[position]; 
+//		}
 	}
 }
 
